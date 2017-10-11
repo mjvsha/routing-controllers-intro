@@ -22,7 +22,39 @@ end
 
 def contest
 @header = "WIN SHIT!!!!!!!!!!!"
+flash[:notice] = "Too late to win shit amigo"
+redirect_to "/welcome"
 
 end
+
+def kitten
+  kitten_size_url
+end
+
+
+def kittens
+
+  kitten_size_url
+
+end
+
+#to respect DRY, we need to move the common code into one method and just have the kittens and kittenmethods call it
+
+def kitten_size_url
+  requested_size = params[:size]
+  @kitten_url = "http://lorempixel.com/#{requested_size}/#{requested_size}/cats"
+
+end
+
+def secrets
+  if params[:magic_word] == "ilovedogs"
+  else
+    flash[:alert] ="nope"
+    redirect_to '/welcome'
+  end
+
+end
+
+
 
 end

@@ -10,4 +10,11 @@ Rails.application.routes.draw do
 
   get '/contest' => 'pages#contest'
 
+  get '/kitten/:size' => 'pages#kitten'
+  #we are defining a dynamic route with anything going for size
+  #whatever is there will be stored in the params hash under the size key
+  get '/kittens/:size' => 'pages#kittens'
+
+  get '/secrets/:magic_word' => 'pages#secrets'
+
 end
