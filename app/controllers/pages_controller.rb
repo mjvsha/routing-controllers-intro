@@ -23,7 +23,7 @@ end
 def contest
 @header = "WIN SHIT!!!!!!!!!!!"
 flash[:notice] = "Too late to win shit amigo"
-redirect_to "/welcome"
+redirect_to welcome_url
 
 end
 
@@ -50,7 +50,7 @@ def secrets
   if params[:magic_word] == "ilovedogs"
   else
     flash[:alert] ="nope"
-    redirect_to '/welcome'
+    redirect_to dude_path(500)
   end
 
 end
